@@ -3,6 +3,18 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 
+FakeWeb.allow_net_connect = false
+
+FakeWeb.register_uri(:get, 'https://github.com/api/v2/json/repos/show/mnutt/hummingbird',
+                     :response => Rails.root.join('spec', 'fixtures', 'repo.json'))
+
+FakeWeb.register_uri(:get, 'https://github.com/api/v2/json/blob/all/mnutt/hummingbird/master',
+                     :response => Rails.root.join('spec', 'fixtures', 'blobs.json'))
+
+FakeWeb.register_uri(:get, 'https://github.com/api/v2/json/blob/show/mnutt/hummingbird/118ab6fdd1521123e178bcd883d06cde69b16e13',
+                     :response => Rails.root.join('spec', 'fixtures', 'raw.json'))
+
+
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
