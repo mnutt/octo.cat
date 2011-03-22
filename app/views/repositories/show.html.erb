@@ -1,2 +1,18 @@
-<h1>Repository#show</h1>
-<p>Find me in app/views/repository/show.html.erb</p>
+<div class="header">
+  <h1><%= @repo.name -%>
+</div>
+
+<h2 class="author">by <a href="https://github.com/<%= @repo.owner -%>"><%= @repo.owner -%></a></h2>
+
+<p class="desc"><%= @repo.description -%></p>
+
+<p class="buttons">
+   <a class="button button_blue" href="https://github.com/<%= @repo.owner -%>/<%= @repo.name -%>">Full Site</a>
+  <!-- <a class="button" href="https://github.com/<%= @repo.owner -%>/<%= @repo.name -%>">Follow</a>-->
+</p>
+
+<div class="readme">
+  <%= @readme -%>
+</div>
+
+<p>Octocat is not affiliated with Github, Inc but it likes Github a lot.</p>
