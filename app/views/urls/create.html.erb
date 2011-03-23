@@ -1,0 +1,16 @@
+<div id="container" style="text-align: center;">
+  <div id="header">
+    <img src="/images/octocat.jpg">
+  </div>
+
+  <p>Here's your short url:</p>
+
+  <div id="url">
+    <%= link_to short_url(@short_url.short), short_url(@short_url.short) -%>
+  </div>
+
+  <p>&rarr; to <%= link_to @short_url.url, @short_url.url -%></p>
+  <% if @short_url.is_repo? -%>
+    <p>&rarr; or alternately to the <%= link_to "mobile version", @short_url.url.sub(/^https/, 'http').sub(/github.com/, request.host_with_port) -%></p>
+  <% end -%>
+</div>

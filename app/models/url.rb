@@ -5,6 +5,7 @@ class Url < ActiveRecord::Base
   before_validation :set_short
 
   def self.create_from_url(u)
+    u.gsub!(/^http:\/\/github.com/, 'https://github.com')
     uri = URI::parse(u)
 
     return unless uri.kind_of? URI::HTTP or uri.kind_of? URI::HTTPS
@@ -26,8 +27,10 @@ class Url < ActiveRecord::Base
   end
 
   def check_for_repo
-    self.url.gsub!(/^http:\/\/github.com/, 'https://github.com')
-
     self.is_repo = true if self.url =~ /^https:\/\/github.com\/[A-Za-z0-9\-\.]+\/[A-Za-z0-9\_\.]+\/?$/
+  end
+
+  def optimized_url
+    self.is_repo? ? self.url.sub(/^https:\/\/github.com/, '') : self.url
   end
 end

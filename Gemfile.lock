@@ -65,6 +65,8 @@ GEM
       rubypants (>= 0.2.0)
     polyglot (0.3.1)
     rack (1.2.2)
+    rack-mobile-detect (0.3.0)
+      rack
     rack-mount (0.6.13)
       rack (>= 1.0.0)
     rack-test (0.5.7)
@@ -113,6 +115,7 @@ DEPENDENCIES
   github-markup
   octokit
   org-ruby
+  rack-mobile-detect
   rails (= 3.0.5)
   rdiscount
   rspec
