@@ -24,7 +24,7 @@ class Url < ActiveRecord::Base
     u.sub!(/^http/i, 'http')
 
     # add http if it wasn't there
-    u = "http://#{u}" unless u =~ /^http:\/\//
+    u = "http://#{u}" unless u =~ /^http/
 
     # github is always https now, no need for an extra redirect
     u.sub!(/^http:\/\/github.com/, 'https://github.com')
