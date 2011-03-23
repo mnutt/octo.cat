@@ -8,8 +8,8 @@ class UrlsController < ApplicationController
 
   def create
     if params[:url].blank?
-      flash[:error] = "Please provide a URL."
-      render 'index'
+      redirect_to '/'
+      return
     end
 
     @short_url = Url.create_from_url(params[:url])
