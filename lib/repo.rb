@@ -6,6 +6,12 @@ class Repo
 
   delegate :name, :user, :owner, :description, :to => :remote_repo
 
+  def exists?
+    !!remote_repo
+  rescue
+    false
+  end
+
   def remote_repo
     @_remote_repo ||= Octokit.repository(repo_path)
   end
