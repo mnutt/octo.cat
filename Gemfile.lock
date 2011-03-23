@@ -105,6 +105,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.25)
+    yui-compressor (0.9.4)
 
 PLATFORMS
   ruby
@@ -121,3 +122,4 @@ DEPENDENCIES
   rspec
   rspec-rails
   sqlite3
+  yui-compressor

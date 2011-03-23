@@ -15,6 +15,7 @@ gem 'rack-mobile-detect', :require => 'rack/mobile-detect'
 gem 'sqlite3'
 
 group :development, :test do
+  gem 'yui-compressor', :require => 'yui/compressor'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'fakeweb'
