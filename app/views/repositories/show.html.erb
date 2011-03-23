@@ -12,7 +12,11 @@
 </p>
 
 <div class="readme">
-  <%= @repo.rendered_readme -%>
+  <% if @repo.marked_up? -%>
+    <%= @repo.rendered_readme -%>
+  <% else -%>
+    <pre><%= @repo.readme -%></pre>
+  <% end -%>
 </div>
 
 <p>Octocat is not affiliated with Github, Inc but it likes Github a lot.</p>

@@ -33,13 +33,17 @@ class Repo
   end
 
   def rendered_readme
-    @_rendered_readme ||= GitHub::Markup.render(File.basename(readme_path), readme).html_safe
+    @_rendered_readme ||= GitHub::Markup.render(readme_path, readme).html_safe
+  end
+
+  def marked_up?
+    GitHub::Markup.can_render? readme_path
   end
 
   protected
 
   def readme_info
-    @_readme_info ||= Octokit.blobs(repo_path, 'master').find{|k, v| k =~ /^readme/i}
+    @_readme_info ||= Octokit.blobs(repo_path, 'master').select{|k, v| k =~ /^readme/i}.last
   end
 
 end
