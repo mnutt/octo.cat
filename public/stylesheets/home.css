@@ -46,7 +46,7 @@ input.button {
 }
 
 div#error {
-  width: 450px;
+  max-width: 450px;
   background: rgba(20,20,20,0.6);
   border-radius: 3px;;
   color: #FFF;
