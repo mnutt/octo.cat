@@ -8,13 +8,15 @@
 </head>
 <body>
 
-<%= yield %>
+  <div id="header">
+    <img src="/images/octocat.jpg">
+  </div>
 
-<div id="footer">
-  <p><a href="/why/did/i/do/this">Why?</a></p>
-  <p>Made by <a style="font-weight: bold;" href="http://twitter.com/michaeln3">@michaeln3</a>. Octo.cat is not affiliated with Github, Inc.</p>
-</div>
+  <%= yield %>
 
+  <div id="footer">
+    <p>Made by <a style="font-weight: bold;" href="http://twitter.com/michaeln3">@michaeln3</a>. Octo.cat is not affiliated with Github, Inc.</p>
+  </div>
 
 </body>
 </html>

@@ -4,6 +4,11 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+#header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 input.text {
   border: 1px solid #CCC;
   padding: 0.2em;
