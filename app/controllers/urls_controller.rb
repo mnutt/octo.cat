@@ -2,6 +2,7 @@ class UrlsController < ApplicationController
   layout 'home'
 
   def index
+    response.headers['Cache-Control'] = 'public, max-age=60'
     @url = Url.new
   end
 
