@@ -9,6 +9,10 @@ body {
   margin-bottom: 10px;
 }
 
+#header img {
+  border: 0;
+}
+
 input.text {
   border: 1px solid #CCC;
   padding: 0.2em;
