@@ -73,6 +73,7 @@ div#url a:hover {
 }
 
 div#footer {
+  color: #666;
   text-align: center;
   margin-top: 90px;
 }
