@@ -5,7 +5,7 @@ class Url < ActiveRecord::Base
   before_validation :set_short
 
   def self.create_from_url(u)
-    u.gsub!(/^http:\/\/github.com/, 'https://github.com')
+    u = normalize(u)
     uri = URI::parse(u)
 
     return unless uri.kind_of? URI::HTTP or uri.kind_of? URI::HTTPS
@@ -17,6 +17,19 @@ class Url < ActiveRecord::Base
     end
 
     url
+  end
+
+  def self.normalize(u)
+    # downcase
+    u.sub!(/^http/i, 'http')
+
+    # add http if it wasn't there
+    u = "http://#{u}" unless u =~ /^http:\/\//
+
+    # github is always https now, no need for an extra redirect
+    u.sub!(/^http:\/\/github.com/, 'https://github.com')
+
+    u
   end
 
   def set_short
