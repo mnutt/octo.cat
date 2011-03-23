@@ -4,16 +4,18 @@ class Url < ActiveRecord::Base
   before_validation :check_for_repo
   before_validation :set_short
 
-  def self.create_from_url(url)
-    uri = URI::parse(url)
+  def self.create_from_url(u)
+    uri = URI::parse(u)
 
     return unless uri.kind_of? URI::HTTP or uri.kind_of? URI::HTTPS
 
-    url = Url.where(:url => url).first
+    url = Url.where(:url => u).first
 
     if url.nil?
-      self.create(:url => url)
+      url = self.create(:url => u)
     end
+
+    url
   end
 
   def set_short
