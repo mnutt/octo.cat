@@ -13,6 +13,7 @@ gem 'org-ruby'
 gem 'rack-mobile-detect', :require => 'rack/mobile-detect'
 
 gem 'sqlite3'
+gem 'redis'
 
 group :development, :test do
   gem 'yui-compressor', :require => 'yui/compressor'

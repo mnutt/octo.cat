@@ -86,6 +86,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     rdiscount (1.6.8)
+    redis (2.1.1)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -119,6 +120,7 @@ DEPENDENCIES
   rack-mobile-detect
   rails (= 3.0.5)
   rdiscount
+  redis
   rspec
   rspec-rails
   sqlite3
