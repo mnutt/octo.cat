@@ -18,12 +18,16 @@ class UrlsController < ApplicationController
   def show
     @url = Url.where(:short => params[:short]).first
 
+    $redis.incr("short:all:#{@url.short}")
+
     if @url.nil?
       flash[:error] = "URL not found."
       redirect_to '/' and return
     end
 
     if request.headers['X_MOBILE_DEVICE']
+      $redis.incr("short:mobile:#{@url.short}")
+
       redirect_to @url.optimized_url
     else
       redirect_to @url.url
