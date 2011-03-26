@@ -3,7 +3,7 @@ class UrlsController < ApplicationController
 
   def index
     response.headers['Cache-Control'] = 'public, max-age=60'
-    @url = Url.new
+    @short_url = Url.new
   end
 
   def create
