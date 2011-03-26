@@ -16,5 +16,9 @@ module OctoCat
     config.filter_parameters += [:password]
 
     config.middleware.use Rack::MobileDetect
+    config.middleware.use Rack::PageSpeed, :public => Rails.public_path do
+      store :disk => Rails.root.join('tmp').to_s
+      inline_css
+    end
   end
 end
