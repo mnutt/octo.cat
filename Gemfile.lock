@@ -45,15 +45,18 @@ GEM
     github-markup (0.5.3)
     hashie (1.0.0)
     i18n (0.5.0)
+    jsmin (1.0.1)
     mail (2.2.15)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcached (1.0.2)
     mime-types (1.16)
     multi_json (0.0.5)
     multi_xml (0.2.2)
     multipart-post (1.1.0)
+    nokogiri (1.4.4)
     octokit (0.6.0)
       addressable (~> 2.2.4)
       faraday (~> 0.5.4)
@@ -64,11 +67,21 @@ GEM
     org-ruby (0.5.3)
       rubypants (>= 0.2.0)
     polyglot (0.3.1)
-    rack (1.2.2)
+    rack (1.2.1)
     rack-mobile-detect (0.3.0)
       rack
     rack-mount (0.6.13)
       rack (>= 1.0.0)
+    rack-pagespeed (1.0.5)
+      jsmin (= 1.0.1)
+      jsmin (= 1.0.1)
+      memcached (= 1.0.2)
+      memcached (= 1.0.2)
+      mime-types (= 1.16)
+      nokogiri (= 1.4.4)
+      nokogiri (= 1.4.4)
+      rack (= 1.2.1)
+      rack (= 1.2.1)
     rack-test (0.5.7)
       rack (>= 1.0)
     rails (3.0.5)
@@ -117,7 +130,9 @@ DEPENDENCIES
   github-markup
   octokit
   org-ruby
+  rack (= 1.2.1)
   rack-mobile-detect
+  rack-pagespeed
   rails (= 3.0.5)
   rdiscount
   redis

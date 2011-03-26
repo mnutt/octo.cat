@@ -12,6 +12,10 @@ gem 'org-ruby'
 # Mobile detection
 gem 'rack-mobile-detect', :require => 'rack/mobile-detect'
 
+# Page speed
+gem 'rack', "1.2.1" # need for pagespeed
+gem 'rack-pagespeed', :require => "rack/pagespeed"
+
 gem 'sqlite3'
 gem 'redis'
 
