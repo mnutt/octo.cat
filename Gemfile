@@ -18,6 +18,7 @@ gem 'rack-pagespeed', :require => "rack/pagespeed"
 
 gem 'sqlite3'
 gem 'redis'
+gem 'SystemTimer'
 
 group :development, :test do
   gem 'yui-compressor', :require => 'yui/compressor'
